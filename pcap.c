@@ -56,19 +56,22 @@ while(1){
 		continue;	
 	}
 
-	printf("This is [%d] Ethernet Header information space \n",i);
+	printf("This is Ethernet Header information space \n");
 	printf("Destination Mac Address: %02x %02x %02x %02x %02x %02x \n",packet[0],packet[1],packet[2],packet[3],packet[4],packet[5]);
 	printf("Source Mac Address: %02x %02x %02x %02x %02x %02x \n",packet[6],packet[7],packet[8],packet[9],packet[10],packet[11]);
 
 	if(packet[12]==0x08 && packet[13]==0x00)
 	{
-		printf("This is [%d] IP Header information space \n", i);
+		printf("This is [%d] IP Header information space \n");
 		printf("Source IP Address: %d.%d.%d.%d \n",packet[26], packet[27], packet[28], packet[29]);
 		printf("Destination IP Address: %d.%d.%d.%d \n", packet[30], packet[31], packet[32], packet[33]);
 	}
 	
+	printf("This is TCP Header information space \n",i);
+	printf("Source Port: %d", ((packet[34]*256)+packet[35]);
+	printf("Destination Port: %d", ((packet[36]*256)+packet[37]);
 
-	i++;
+	
 }
 /* And close the session */
 pcap_close(handle);
