@@ -72,7 +72,7 @@ while(1)
 	printf("Source Port: %d", packet[34]*256+packet[35]);
 	printf("Destination Port: %d", packet[36]*256+packet[37]);
 
-	
+	printf("Data: %s",packet+54);
 	
 }
 
